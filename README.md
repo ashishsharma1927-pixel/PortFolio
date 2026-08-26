@@ -50,6 +50,7 @@ I am a passionate Python Backend Developer focused on building secure, scalable,
 * **GitHub**: [ashishsharma1927-pixel](https://github.com/ashishsharma1927-pixel)
 * **LinkedIn**: [Ashish Sharma](https://www.linkedin.com/in/ashish-sharma-742268416/)
 * **Instagram**: [sharmaashish_2004](https://www.instagram.com/sharmaashish_2004/)
+* **Portfolio**: [Click to view](https://ashishsharma1927-pixel.github.io/PortFolio/)
 
 ---
 *© 2026 Ashish Sharma. All Rights Reserved.*
