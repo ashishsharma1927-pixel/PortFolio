@@ -77,7 +77,8 @@
         }
     </style>
 
-    <!-- Custom CSS (Removed) -->
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 
     <!--Device CND-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -96,40 +97,40 @@
 
     <!--================ HEADER ================-->
 
-    <header class="header fixed top-0 left-0 w-full z-50 bg-bg/90 dark:bg-bg-dark/90 backdrop-blur-md border-b border-border transition-colors duration-300">
+    <header class="header">
 
-        <div class="container flex items-center justify-between h-20">
+        <div class="container navbar">
 
-            <a href="#" class="logo text-2xl font-bold text-heading dark:text-heading-dark">
-                Ashish<span class="text-primary">.</span>
+            <a href="#" class="logo">
+                Ashish<span>.</span>
             </a>
 
             <nav>
 
-                <ul class="nav-links fixed top-20 left-[-100%] w-full h-[calc(100vh-5rem)] bg-bg dark:bg-bg-dark flex flex-col items-center justify-center gap-8 text-lg font-medium transition-all duration-300 md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:gap-8 md:text-base [&.show-menu]:left-0 z-40">
+                <ul class="nav-links">
 
-                    <li><a href="#home" class="active text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Home</a></li>
-                    <li><a href="#about" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">About</a></li>
-                    <li><a href="#skills" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Skills</a></li>
-                    <li><a href="#stats" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Statistics</a></li>
-                    <li><a href="#projects" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Projects</a></li>
-                    <li><a href="#contact" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Contact</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#stats">Statistics</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
 
                 </ul>
 
             </nav>
 
-            <div class="nav-right flex items-center gap-6">
+            <div class="nav-right">
 
-                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="text-2xl text-text hover:text-primary dark:text-text-dark transition-colors">
+                <button id="theme-toggle" type="button" aria-label="Toggle theme">
                     <i class="ri-moon-line"></i>
                 </button>
 
-                <div class="menu-btn block md:hidden w-7 h-5 cursor-pointer relative z-50 flex flex-col justify-between [&.active>span:nth-child(1)]:rotate-45 [&.active>span:nth-child(1)]:translate-y-[8px] [&.active>span:nth-child(2)]:opacity-0 [&.active>span:nth-child(3)]:-rotate-45 [&.active>span:nth-child(3)]:-translate-y-[8px]">
+                <div class="menu-btn">
 
-                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300 origin-center"></span>
-                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300"></span>
-                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300 origin-center"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
                 </div>
 
