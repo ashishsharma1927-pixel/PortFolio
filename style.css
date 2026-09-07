@@ -2618,10 +2618,129 @@ body.dark-theme .container {
     }
 }
 
-/* Make About section fonts pure white in dark theme and pure black in light theme */
+/* Make About section fonts visible in both themes */
 .about-content h3,
-.about-content p,
-.info-box h4,
-.info-box span {
+.info-box h4 {
     color: var(--heading) !important;
+}
+
+.about-content p,
+.info-box span,
+.experience-card span {
+    color: var(--text) !important;
+}
+
+/*==================================================
+    MOBILE RESPONSIVENESS FIXES (991px & below)
+==================================================*/
+@media (max-width: 991px) {
+    /* Navbar fixes */
+    .menu-btn {
+        display: block !important;
+        z-index: 1000; /* Ensure it stays on top */
+    }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 30px 0;
+        background: var(--bg-color);
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        transition: left 0.4s ease;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        z-index: 999;
+    }
+    
+    .nav-links.show-menu {
+        left: 0;
+    }
+    
+    /* Hamburger animation */
+    .menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .menu-btn.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    /* Hero section */
+    .hero-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons, .social-icons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* About section */
+    .about-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 60px !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .about-image {
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        transform: none !important;
+    }
+    
+    .about-content {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        transform: none !important;
+    }
+    
+    .about-info {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    .info-box {
+        text-align: center;
+    }
+
+    .experience-card {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -20px;
+        width: 80%;
+        max-width: 250px;
+    }
 }
