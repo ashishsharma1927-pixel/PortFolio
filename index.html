@@ -6,76 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashish Sharma's | Portfolio</title>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        bg: { DEFAULT: '#ffffff', dark: '#09090F' },
-                        'bg-light': { DEFAULT: '#f5f7ff', dark: '#141420' },
-                        text: { DEFAULT: '#222222', dark: '#E6E6E6' },
-                        'text-light': { DEFAULT: '#555555', dark: '#B8B8C7' },
-                        heading: { DEFAULT: '#111111', dark: '#ffffff' },
-                        'card-bg': { DEFAULT: 'rgba(255, 255, 255, .82)', dark: 'rgba(255, 255, 255, .08)' },
-                        border: { DEFAULT: 'rgba(0, 0, 0, .12)', dark: 'rgba(255, 255, 255, .15)' },
-                        white: { DEFAULT: '#111111', dark: '#ffffff' },
-                        primary: '#6C63FF',
-                        secondary: '#8E7CFF',
-                        accent: { DEFAULT: '#00a8c6', dark: '#00E5FF' },
-                    },
-                    fontFamily: {
-                        sans: ['Poppins', 'sans-serif'],
-                    },
-                    maxWidth: {
-                        'container': '1200px',
-                    }
-                }
-            }
-        }
-    </script>
-    <style type="text/tailwindcss">
-        @layer base {
-            body {
-                @apply bg-bg dark:bg-bg-dark text-text dark:text-text-dark font-sans overflow-x-hidden transition-colors duration-300 relative;
-            }
-            html {
-                scroll-behavior: smooth;
-            }
-            h1, h2, h3, h4, h5, h6 {
-                @apply text-heading dark:text-heading-dark;
-            }
-        }
-        @layer components {
-            .container {
-                @apply max-w-container mx-auto px-4;
-            }
-            .btn {
-                @apply inline-block px-8 py-3 rounded-full font-medium transition-all duration-300;
-            }
-            .primary-btn {
-                @apply bg-primary text-white hover:bg-secondary hover:shadow-[0_12px_30px_rgba(108,99,255,0.3)] dark:text-[#ffffff];
-            }
-            .secondary-btn {
-                @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white dark:hover:text-[#ffffff] transition-all duration-300 rounded-full;
-            }
-            .section-title {
-                @apply text-center mb-16;
-            }
-            .section-title h2 {
-                @apply text-4xl font-bold mb-4 relative inline-block;
-            }
-            .section-title h2::after {
-                content: '';
-                @apply absolute w-1/2 h-1 bg-primary bottom-[-8px] left-1/4 rounded-full;
-            }
-            .section-title p {
-                @apply text-text-light dark:text-text-light-dark max-w-xl mx-auto;
-            }
-        }
-    </style>
+    <!-- Removed Tailwind as project has reverted to custom CSS -->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
