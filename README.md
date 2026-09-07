@@ -19,8 +19,8 @@ Simply open `index.html` in your browser to view the portfolio locally.
   * Contact (Functional UI for reaching out)
 
 ## 🛠️ Technologies Used
-* **Frontend**: HTML5, CSS3, Vanilla JavaScript
-* **Styling**: Custom CSS with variables for theming, Flexbox/Grid for layout
+* **Frontend**: HTML5, Tailwind CSS, Vanilla JavaScript
+* **Styling**: Tailwind CSS for responsive and utility-first styling
 * **Icons**: [Remix Icon](https://remixicon.com/) & [Devicon](https://devicon.dev/)
 * **Animations**: 
   * [Typed.js](https://github.com/mattboldt/typed.js/) (Dynamic typing effect)
@@ -30,8 +30,7 @@ Simply open `index.html` in your browser to view the portfolio locally.
 ## 📂 Project Structure
 ```text
 /
-├── index.html       # Main HTML document
-├── style.css        # Main stylesheet containing all themes, layouts, and animations
+├── index.html       # Main HTML document (Includes Tailwind configuration)
 ├── scripts.js       # JavaScript for theme toggle, animations, menu, and scroll behaviors
 ├── Profile.jpeg     # Hero section profile image
 ├── My_project.png   # About section image
@@ -39,9 +38,9 @@ Simply open `index.html` in your browser to view the portfolio locally.
 ```
 
 ## 💻 About Me (Ashish Sharma)
-I am a passionate Python Backend Developer focused on building secure, scalable, and highly efficient backend systems. I enjoy creating robust APIs, reliable database schemas, and clean architectures for modern web applications. 
+I am a passionate Python Backend Developer focused on building secure, scalable, and highly efficient backend systems. I specialize in the Django web framework, building robust REST APIs, managing database schemas, and designing clean architectures for modern web applications. 
 
-**Core Skills**: Python, C++, Django, HTML, CSS, JavaScript
+**Core Skills**: Python, C++, Django, Django REST Framework, SQL, HTML, Tailwind CSS, JavaScript
 
 ## 📞 Contact
 * **Email**: ashishsharma1927@gmail.com

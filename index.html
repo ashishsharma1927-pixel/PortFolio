@@ -6,8 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ashish Sharma's | Portfolio</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        bg: { DEFAULT: '#ffffff', dark: '#09090F' },
+                        'bg-light': { DEFAULT: '#f5f7ff', dark: '#141420' },
+                        text: { DEFAULT: '#222222', dark: '#E6E6E6' },
+                        'text-light': { DEFAULT: '#555555', dark: '#B8B8C7' },
+                        heading: { DEFAULT: '#111111', dark: '#ffffff' },
+                        'card-bg': { DEFAULT: 'rgba(255, 255, 255, .82)', dark: 'rgba(255, 255, 255, .08)' },
+                        border: { DEFAULT: 'rgba(0, 0, 0, .12)', dark: 'rgba(255, 255, 255, .15)' },
+                        white: { DEFAULT: '#111111', dark: '#ffffff' },
+                        primary: '#6C63FF',
+                        secondary: '#8E7CFF',
+                        accent: { DEFAULT: '#00a8c6', dark: '#00E5FF' },
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1200px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-bg dark:bg-bg-dark text-text dark:text-text-dark font-sans overflow-x-hidden transition-colors duration-300 relative;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            h1, h2, h3, h4, h5, h6 {
+                @apply text-heading dark:text-heading-dark;
+            }
+        }
+        @layer components {
+            .container {
+                @apply max-w-container mx-auto px-4;
+            }
+            .btn {
+                @apply inline-block px-8 py-3 rounded-full font-medium transition-all duration-300;
+            }
+            .primary-btn {
+                @apply bg-primary text-white hover:bg-secondary hover:shadow-[0_12px_30px_rgba(108,99,255,0.3)] dark:text-[#ffffff];
+            }
+            .secondary-btn {
+                @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white dark:hover:text-[#ffffff] transition-all duration-300 rounded-full;
+            }
+            .section-title {
+                @apply text-center mb-16;
+            }
+            .section-title h2 {
+                @apply text-4xl font-bold mb-4 relative inline-block;
+            }
+            .section-title h2::after {
+                content: '';
+                @apply absolute w-1/2 h-1 bg-primary bottom-[-8px] left-1/4 rounded-full;
+            }
+            .section-title p {
+                @apply text-text-light dark:text-text-light-dark max-w-xl mx-auto;
+            }
+        }
+    </style>
+
+    <!-- Custom CSS (Removed) -->
 
     <!--Device CND-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -24,40 +94,42 @@
 
     <!--================ HEADER ================-->
 
-    <header class="header">
+    <!--================ HEADER ================-->
 
-        <div class="container navbar">
+    <header class="header fixed top-0 left-0 w-full z-50 bg-bg/90 dark:bg-bg-dark/90 backdrop-blur-md border-b border-border transition-colors duration-300">
 
-            <a href="#" class="logo">
-                Ashish<span>.</span>
+        <div class="container flex items-center justify-between h-20">
+
+            <a href="#" class="logo text-2xl font-bold text-heading dark:text-heading-dark">
+                Ashish<span class="text-primary">.</span>
             </a>
 
             <nav>
 
-                <ul class="nav-links">
+                <ul class="nav-links fixed top-20 left-[-100%] w-full h-[calc(100vh-5rem)] bg-bg dark:bg-bg-dark flex flex-col items-center justify-center gap-8 text-lg font-medium transition-all duration-300 md:static md:w-auto md:h-auto md:bg-transparent md:flex-row md:gap-8 md:text-base [&.show-menu]:left-0 z-40">
 
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#stats">Statistics</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home" class="active text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Home</a></li>
+                    <li><a href="#about" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">About</a></li>
+                    <li><a href="#skills" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Skills</a></li>
+                    <li><a href="#stats" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Statistics</a></li>
+                    <li><a href="#projects" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Projects</a></li>
+                    <li><a href="#contact" class="text-text hover:text-primary dark:text-text-dark transition-colors [&.active]:text-primary">Contact</a></li>
 
                 </ul>
 
             </nav>
 
-            <div class="nav-right">
+            <div class="nav-right flex items-center gap-6">
 
-                <button id="theme-toggle" type="button" aria-label="Toggle theme">
+                <button id="theme-toggle" type="button" aria-label="Toggle theme" class="text-2xl text-text hover:text-primary dark:text-text-dark transition-colors">
                     <i class="ri-moon-line"></i>
                 </button>
 
-                <div class="menu-btn">
+                <div class="menu-btn block md:hidden w-7 h-5 cursor-pointer relative z-50 flex flex-col justify-between [&.active>span:nth-child(1)]:rotate-45 [&.active>span:nth-child(1)]:translate-y-[8px] [&.active>span:nth-child(2)]:opacity-0 [&.active>span:nth-child(3)]:-rotate-45 [&.active>span:nth-child(3)]:-translate-y-[8px]">
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300 origin-center"></span>
+                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300"></span>
+                    <span class="block w-full h-[3px] bg-text dark:bg-text-dark rounded transition-all duration-300 origin-center"></span>
 
                 </div>
 
@@ -96,12 +168,7 @@
                 </h2>
 
                 <p>
-
-                    Passionate Python Backend Developer building secure,
-                    scalable, and high-performance web applications using Django.
-                    I enjoy developing robust APIs, efficient database systems,
-                    and clean backend architectures with reliable code.
-
+                    Passionate Python Backend Developer building secure, scalable, and high-performance web applications. Specializing in Django and Django REST Framework, I enjoy architecting robust APIs, managing complex database schemas, and writing clean, maintainable server-side code.
                 </p>
 
                 <div class="hero-buttons">
@@ -251,13 +318,11 @@
                     </h3>
 
                     <p>
-                        I enjoy building secure, scalable and efficient backend systems
-                        that power modern web applications and digital experiences.
+                        I am a dedicated Backend Developer with a strong focus on Python and the Django ecosystem. I thrive on solving complex backend challenges, from optimizing database queries to securing data endpoints.
                     </p>
 
                     <p>
-                        My goal is to create clean APIs, reliable databases and robust
-                        server-side architecture with performance and security in mind.
+                        My goal is to architect seamless and scalable server-side solutions. Whether it's building RESTful APIs, designing relational databases, or integrating third-party services, I prioritize performance, security, and clean code.
                     </p>
 
                     <div class="about-info">
@@ -646,11 +711,12 @@
 
                     <div class="project-info">
 
-                        <h3>E-Commerce Website</h3>
+                        <h3>Online Car Marketplace</h3>
 
                         <p>
-                            Responsive shopping website with beautiful
-                            interface and animations.
+                            A full-stack online car marketplace where users can explore car listings,
+                            view detailed information, and securely purchase their preferred vehicles
+                            through an easy and responsive platform.
                         </p>
 
                         <div class="project-tech">
@@ -728,75 +794,57 @@
 
     <!--==================== CONTACT ====================-->
 
-    <section class="contact section" id="contact">
+    <section class="contact section py-24 bg-bg-light dark:bg-bg-light-dark" id="contact">
 
         <div class="container">
 
             <div class="section-title">
-
                 <h2>Contact Me</h2>
-
-                <p>
-                    Let's build something amazing together.
-                </p>
-
+                <p>Let's build something amazing together.</p>
             </div>
 
-            <div class="contact-container">
+            <div class="contact-container grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-                <div class="contact-info">
+                <div class="contact-info flex flex-col gap-6">
 
-                    <div class="contact-card">
-
-                        <i class="ri-mail-line"></i>
-
-                        <h3>Email</h3>
-                        <a href="ashishsharma@gmail.com" >
-                            </a>
-                            
-                        <p>ashishsharma1927@gmail.com</p>
-
+                    <div class="contact-card bg-bg dark:bg-bg-dark p-6 rounded-2xl shadow-md border border-border flex items-center gap-6 hover:-translate-y-1 transition-transform duration-300 group">
+                        <i class="ri-mail-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1 text-heading dark:text-heading-dark">Email</h3>
+                            <p class="text-text-light dark:text-text-light-dark">ashishsharma1927@gmail.com</p>
+                        </div>
                     </div>
 
-                    <div class="contact-card">
-
-                        <i class="ri-phone-line"></i>
-
-                        <h3>Phone</h3>
-
-                        <p>+91 9015210471</p>
-
+                    <div class="contact-card bg-bg dark:bg-bg-dark p-6 rounded-2xl shadow-md border border-border flex items-center gap-6 hover:-translate-y-1 transition-transform duration-300 group">
+                        <i class="ri-phone-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1 text-heading dark:text-heading-dark">Phone</h3>
+                            <p class="text-text-light dark:text-text-light-dark">+91 9015210471</p>
+                        </div>
                     </div>
                     
-                    <div class="contact-card">
-                        <a href="https://maps.app.goo.gl/CZu2RFSQ9VEijK6H8">
-
-                        <i class="ri-map-pin-line"></i>
-
-                        <h3>Location</h3>
-
-                        <p>Punjab, India</p>
-
-                        </a>
-
-                    </div>
+                    <a href="https://maps.app.goo.gl/CZu2RFSQ9VEijK6H8" target="_blank" class="contact-card bg-bg dark:bg-bg-dark p-6 rounded-2xl shadow-md border border-border flex items-center gap-6 hover:-translate-y-1 transition-transform duration-300 group">
+                        <i class="ri-map-pin-line text-4xl text-primary group-hover:scale-110 transition-transform duration-300"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-1 text-heading dark:text-heading-dark">Location</h3>
+                            <p class="text-text-light dark:text-text-light-dark">Punjab, India</p>
+                        </div>
+                    </a>
                     
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form bg-bg dark:bg-bg-dark p-8 rounded-2xl shadow-lg border border-border flex flex-col gap-6">
 
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Your Name" required class="w-full px-5 py-4 rounded-xl bg-bg-light dark:bg-bg-light-dark border border-border focus:border-primary text-text dark:text-text-dark outline-none transition-colors duration-300">
 
-                    <input type="email" placeholder="Email Address" required>
+                    <input type="email" placeholder="Email Address" required class="w-full px-5 py-4 rounded-xl bg-bg-light dark:bg-bg-light-dark border border-border focus:border-primary text-text dark:text-text-dark outline-none transition-colors duration-300">
 
-                    <input type="text" placeholder="Subject" required>
+                    <input type="text" placeholder="Subject" required class="w-full px-5 py-4 rounded-xl bg-bg-light dark:bg-bg-light-dark border border-border focus:border-primary text-text dark:text-text-dark outline-none transition-colors duration-300">
 
-                    <textarea rows="6" placeholder="Write your message..." required></textarea>
+                    <textarea rows="6" placeholder="Write your message..." required class="w-full px-5 py-4 rounded-xl bg-bg-light dark:bg-bg-light-dark border border-border focus:border-primary text-text dark:text-text-dark outline-none transition-colors duration-300 resize-none"></textarea>
 
-                    <button class="btn primary-btn">
-
+                    <button class="btn primary-btn self-start py-4 px-8 mt-2">
                         Send Message
-
                     </button>
 
                 </form>
@@ -809,41 +857,37 @@
 
     <!--==================== FOOTER ====================-->
 
-    <footer class="footer">
+    <footer class="footer bg-bg dark:bg-bg-dark py-12 border-t border-border mt-20 text-center">
 
-        <div class="container">
+        <div class="container flex flex-col items-center gap-6">
 
-            <h2>Ashish Sharma</h2>
+            <h2 class="text-3xl font-bold text-heading dark:text-heading-dark">Ashish Sharma</h2>
 
-            <p>
-                Backend Developer | Python | Django | HTML | CSS
+            <p class="text-text-light dark:text-text-light-dark font-medium">
+                Backend Developer | Python | Django | Django REST Framework | PostgreSQL
             </p>
 
-            <div class="footer-social">
+            <div class="footer-social flex flex-wrap justify-center gap-4">
 
-                <a href="https://github.com/ashishsharma1927-pixel" class="btn secondary-btn" target="_blank">
-                    <i class="ri-github-fill"></i>
+                <a href="https://github.com/ashishsharma1927-pixel" class="btn secondary-btn flex items-center gap-2" target="_blank">
+                    <i class="ri-github-fill text-xl"></i>
                     GitHub
                 </a>
 
-                <a href="https://www.linkedin.com/in/ashish-sharma-742268416/" class="btn secondary-btn"
-                    target="_blank">
-                     <i class="ri-linkedin-box-fill"></i>
-                    LinkdIn
+                <a href="https://www.linkedin.com/in/ashish-sharma-742268416/" class="btn secondary-btn flex items-center gap-2" target="_blank">
+                     <i class="ri-linkedin-box-fill text-xl"></i>
+                    LinkedIn
                 </a>
-                <a href="https://www.instagram.com/sharmaashish_2004/" class="btn secondary-btn" target="_blank">
-                    <i class="ri-instagram-line"></i>
+                
+                <a href="https://www.instagram.com/sharmaashish_2004/" class="btn secondary-btn flex items-center gap-2" target="_blank">
+                    <i class="ri-instagram-line text-xl"></i>
                     Instagram
                 </a>
 
-
             </div>
 
-            <p class="copyright">
-
-                © 2026 Ashish Sharma.
-                All Rights Reserved.
-
+            <p class="copyright text-sm text-text-light dark:text-text-light-dark mt-8 border-t border-border pt-8 w-full max-w-lg">
+                © 2026 Ashish Sharma. All Rights Reserved.
             </p>
 
         </div>
@@ -852,10 +896,8 @@
 
     <!--==================== BACK TO TOP ====================-->
 
-    <a href="#home" class="scroll-top">
-
+    <a href="#home" class="scroll-top fixed right-6 bottom-[-20%] bg-primary text-white w-12 h-12 flex items-center justify-center rounded-full text-xl shadow-lg hover:bg-secondary transition-all duration-300 z-50 [&.show-scroll]:bottom-6">
         <i class="ri-arrow-up-line"></i>
-
     </a>
 
     <!--==================== SCROLL REVEAL ====================-->

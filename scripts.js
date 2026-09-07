@@ -21,7 +21,7 @@ if (themeToggle) {
     // Apply saved theme when page loads
     if (savedTheme === "dark") {
 
-        document.body.classList.add("dark-theme");
+        document.body.classList.add("dark");
 
         if (themeIcon) {
             themeIcon.classList.remove("ri-moon-line");
@@ -35,12 +35,12 @@ if (themeToggle) {
     themeToggle.addEventListener("click", function () {
 
         // Toggle dark-theme class
-        document.body.classList.toggle("dark-theme");
+        document.body.classList.toggle("dark");
 
 
         // Check current theme
         const isDark =
-            document.body.classList.contains("dark-theme");
+            document.body.classList.contains("dark");
 
 
         if (isDark) {
